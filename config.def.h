@@ -166,7 +166,8 @@ static const Rule rules[] = {
            // class          instance          title  wintype  tags mask  isfloating  monitor
 {"com-cburch-logisim-Main",     NULL,    "Preferences",  NULL,    0,         1,          -1 },
 
-{"discord",     NULL,    NULL,  "browser-window",    0,         1,          -1 },
+{"discord",     "discord",    NULL,  NULL,    0,         1,          -1 },
+{"Thunar",     "thunar",    "jlp - Thunar",   NULL, 1,         1,          -1 }
 
 };
 
