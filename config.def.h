@@ -167,7 +167,7 @@ static const Rule rules[] = {
 {"com-cburch-logisim-Main",     NULL,    "Preferences",  NULL,    0,         1,          -1 },
 
 {"discord",     "discord",    NULL,  NULL,    0,         1,          -1 },
-{"Thunar",     "thunar",    "jlp - Thunar",   NULL, 1,         1,          -1 }
+{"Thunar",     "thunar",    NULL, NULL, 0,         1,          -1 }
 
 };
 
@@ -220,7 +220,6 @@ static const Layout layouts[] = {
 #define STACKKEYS(MOD,ACTION) \
 	{ MOD, XK_j,     ACTION##stack, {.i = INC(+1) } }, \
 	{ MOD, XK_k,     ACTION##stack, {.i = INC(-1) } }, \
-	{ MOD, XK_s,     ACTION##stack, {.i = PREVSEL } }, \
 	{ MOD|Mod4Mask, XK_w,     ACTION##stack, {.i = 0 } }, \
 	{ MOD, XK_e,     ACTION##stack, {.i = 1 } }, \
 	{ MOD, XK_a,     ACTION##stack, {.i = 2 } }, \
@@ -244,6 +243,7 @@ static const char *dmenucmd[] = {
 };
 static const char *roficmd[] = { "rofi", "-show", "drun", "-config", "~/.config/rofi/rofidmenu.rasi", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *fshotcmd[]  = { "flameshot", "gui", NULL };
 
 /* This defines the name of the executable that handles the bar (used for signalling purposes) */
 #define STATUSBAR "dwmblocks"
@@ -254,6 +254,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_comma,      spawn,		       {.v = lfcmd } }, 
 	{ MODKEY,                       XK_d,          spawn,                  {.v = roficmd } },
 	{ MODKEY,	                XK_Return,     spawn,                  {.v = termcmd } },
+	{ MODKEY|ShiftMask,	                XK_s,     spawn,                  {.v = fshotcmd } },
   	{ 0, XF86XK_AudioMute,          	       spawn, 	   	       {.v = mute_vol } },
         { 0, XF86XK_AudioLowerVolume,   	       spawn, 		       {.v = down_vol } },
         { 0, XF86XK_AudioRaiseVolume,   	       spawn, 	               {.v = up_vol } },
@@ -299,7 +300,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_space,      setlayout,              {0} },
 	{ MODKEY|ShiftMask,             XK_space,      togglefloating,         {0} },
 	{ MODKEY,                       XK_y,          togglefullscreen,       {0} },
-	{ MODKEY|ShiftMask,             XK_s,          togglesticky,           {0} },
+	{ MODKEY|ShiftMask,             XK_n,          togglesticky,           {0} },
 	{ MODKEY,                       XK_0,          view,                   {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,          tag,                    {.ui = ~0 } },
 	//{ MODKEY,                       XK_comma,      focusmon,               {.i = -1 } },
